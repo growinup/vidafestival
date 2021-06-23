@@ -1,0 +1,650 @@
+<script>
+    var myTableEventSelectedTable = "myEventSelectTable";
+    let table;
+    var data;
+    var variableMolona;
+   
+    var myPeticionID;
+    
+    var dateEvent;
+    var datePeticio;
+    var eventName;
+    var eventID;
+
+    var quantitatInvitacions;
+    var zonaPeticio;
+
+    var enNomDe;
+
+    const myStock = 25;
+    var myPending = 25;
+    var myTotalInvitationPrice;
+
+    var myPrice = 150;
+
+    var myFinalidadID;
+    var myFinalidad;
+    var  myTipoInvitacionID;
+    var myTipoInvitacion;
+    var email_secundario_peticion;
+    var myInvitationID;
+    var listadoAsistentes = [];
+
+    var nombreAsistentePrincipal;
+    var emailAsistentePrincipal;
+
+    $(document).ready(function() {
+       table = $('#myEventSelectTable').DataTable({
+        
+        "order": [[ 1, "asc" ]],
+        "scrollX": true,
+        "ajax": {
+            "url": "/invitationslogistica",
+            "type": "GET",
+            "datatype": "json"
+        },
+
+         "columns": [
+                // { "data": "id","visible": false   },                     
+                { "data": "estado" , 
+                
+                "render": function ( data, type, row, meta ) {
+                        if (data==1) return '<b class="badge badge-pendiente text-white">Pendent</b>';
+                        if (data==2) return '<b class="badge badge-en-proceso text-white">En procés</b>';
+                        if (data==3) return '<b class="badge badge-modificada text-white">Modificada</b>';
+                        if (data==4) return '<b class="badge badge-cancelada text-white">Cancel.lada</b>';
+                        if (data==5) return '<b class="badge badge-autorizada text-white">Autoritzada</b>';
+                        if (data==6) return '<b class="badge badge-pendiente-envio text-white">Pendent enviament</b>';
+                        if (data==7) return '<b class="badge badge-enviada text-white">Enviada</b>';
+                }        
+                
+                 },
+                { "data": "codigo" , "searchable": true  },
+                { "data": "fecha_peticion" },
+                { "data": "activity_id" },
+                { "data": "nombre_evento", "searchable": true },
+                { "data": "fecha_evento"  },
+                { "data": "hora_evento"  },
+                { "data": "cantidad"  },
+                { "data": "price" ,
+                
+                "render": function ( data, type, row, meta ) {
+                                    return data + ' €';
+                        }
+
+                 },
+                { "data": "zona"  },
+                { "data": "user_dep"  },
+                { "data": "user_name"  },
+                { "data": "en_nombre_de"  },
+
+                // { "defaultContent": " <a href='#' class='btn btn-success btn-sm' id='select'>Autoritzar</a>  <a href='#' class='btn btn-primary btn-sm' id='selectVer'>Veure</a>   <a href='#' class='btn btn-danger btn-sm' id='selectCancelar'>Cancel.lar</a>"}
+                { "defaultContent": " <a href='#' class='btn btn-warning btn-sm feather icon-edit-2' id='selectEditar'>      </a> "}                
+            ],         
+
+        "rowCallback": function(row, data, index) {
+            var cellValue = data["estado"];
+            var cellValuePrice = data["price"];
+            var myEuros;
+
+            },
+
+            "language": {
+                "info": "_TOTAL_ Registres",
+                "search": "Cercar",
+                "paginate": {
+                    "next": "Següent",
+                    "previous": "Anterior"
+                },
+                "lengthMenu": 'Veure <select>' + 
+                        '<option value = "10">10</option>' +
+                        '<option value = "25">25</option>' +
+                        '<option value = "-1">Tots</option>' +
+                        '</select> registres',
+
+                "loadingRecords": "Carregant...",
+                "processing": "Processant...",
+                "emptyTable": "No hi ha dades",
+                "infoEmpty": "",
+                "infoFiltered": "",
+                "zeroRecords": "No hi ha dades"
+            }
+        });
+
+        $('#'+myTableEventSelectedTable + ' tbody').on( 'click', 'button', function () {
+            data = table.row( $(this).parents('tr') ).data();
+            alert( data[0] +"'s salary is: "+ data['id' ] );
+            }
+         );
+
+         $('#'+myTableEventSelectedTable).on('click', '#select', function (e) {
+            e.preventDefault();  
+
+            var currentRow = $(this).closest("tr");
+
+            var data = $('#myEventSelectTable').DataTable().row(currentRow).data();
+       
+            autorizarPeticion(data['id']);
+
+        });         
+
+        $('#'+myTableEventSelectedTable).on('click', '#selectEditar', function (e) {
+            e.preventDefault();  
+
+            var currentRow = $(this).closest("tr");
+
+            var data = $('#myEventSelectTable').DataTable().row(currentRow).data();
+       
+            editarPeticion(data['id']);
+
+        });         
+
+
+
+    } );
+
+
+
+
+    function editarPeticion (myId) {
+
+    axios.put('/editarpeticionautorizador' ,{
+            IDPeticion: myId,
+    }).then(response => {
+            
+            if (response.data.success) {
+        
+                // prapare data
+             
+                myPeticionID = response.data.data.id;
+                console.log(myPeticionID);
+
+                showModalDetallePeticionLogistica(response.data);
+                
+            } else {
+                Swal.fire(
+                    'Error!',
+                    'No ha sigut possible editar la petició',
+                    'error'
+                    )
+            }
+    
+        })
+        .catch( function (error) {
+                    console.log (error)
+        });
+    }
+
+    
+    function showModalDetallePeticionLogistica(myData) {
+        listadoAsistentes = [];
+    
+        $('#myAssistentsTableResumen tr:gt(0)').remove()
+
+        quantitatInvitacions = myData.data.cantidad;
+        enNomDe = myData.data.en_nombre_de;
+
+        $('#myDataEsdevenimentResumen').text(myData.data.fecha_evento);
+        $('#myEsdevenimentResumen').text(myData.data.nombre_evento);
+        $('#dataPeticioResumen').text(myData.data.fecha_peticion);
+        $('#myQuantitatResumen').text(myData.data.cantidad);
+
+        $('#myEnNomDeResumen').text(enNomDe);
+        
+        $('#myAssistentsTitleResumen').text(myData.data.nombre_evento + ' ' + myData.data.fecha_evento )           
+
+        $('#myNumeroPeticionAEnviar').text(myData.data.codigo );
+
+        myInvitationID = myData.data.id;
+
+        $('#myTipusResumen').text(enNomDe);
+
+        myFinalitat2  = myData.data.finalidad;
+        myTipus2 = myData.data.tipo_invitacion;
+        myZona2 = myData.data.zona;
+
+        myFinalidadID =  myData.data.finalidad_id;
+        myTipoInvitacionID = myData.data.tipo_invitacion_id;
+       
+        $('#myFinalitatResumen').text(myFinalitat2);
+        $('#myTipusResumen').text(myTipus2);
+        $('#myZonaResumen').text(myZona2);
+
+        $('#myPendingResumen').text(myPending);            
+
+        $('#myTotalInvitationPriceAssistentsResumen').text(myData.data.price + ' €');            
+        
+        $('#codigoPeticionEdicionAutorizador').text(myData.data.codigo);  
+
+        $('#emailSecundarioPeticion').val(myData.data.email_secundario_peticion);  
+ 
+
+        $('#myPeticionarioNombreResumen').text(myData.data.user_name);
+        $('#myPeticionarioDepartamentoResumen').text(myData.data.user_dep);
+
+        listadoAsistentes = myData.guests;      
+
+        myAddTableRowResumen();
+
+            // show modal ----------
+
+        $('#myModalPeticionesVerAutorizador').modal('show'); 
+
+    }
+
+
+
+    function myAddTableRowResumen() {
+        
+        var myTable = document.getElementById("myAssistentsTableResumen");
+
+        //console.log (listadoAsistentes);
+
+
+        listadoAsistentes.forEach(asistente => {
+
+            if (asistente.pivot.es_principal)
+            {
+                nombreAsistentePrincipal = asistente.nombre + ' ' + asistente.apellidos;
+                emailAsistentePrincipal = asistente.pivot.email;
+                    
+                console.log(nombreAsistentePrincipal);
+                console.log(emailAsistentePrincipal);
+                return;
+            }
+        });
+
+
+        listadoAsistentes.forEach(asistente => {
+
+            var row = myTable.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+
+            cell1.innerHTML = asistente.nombre;
+            cell2.innerHTML = asistente.apellidos;
+            cell3.innerHTML = asistente.dni;      
+            cell4.innerHTML = asistente.fecha_nacimiento;
+            cell5.innerHTML = asistente.nacionalidad;
+            cell6.innerHTML = asistente.email;
+
+            if (asistente.pivot.es_principal)
+            {
+                cell7.innerHTML = "✓";
+            }
+            else {
+                cell7.innerHTML = "";
+            }            
+
+        });
+
+    }
+
+
+    function asignarPeticionModal() {
+           
+        $('#cantidadAsignarLogistica').text(quantitatInvitacions); 
+        $('#myModalLogisticaAsignar').modal('show'); 
+
+    }
+
+
+    function autorizarPeticion (myId) {
+   
+        Swal.fire({
+        title: 'Autoritzar petició',
+        text: "¿Segur que vols autoritzar aquesta petició?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#129443',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, autoritzar petició!',
+        cancelButtonText: 'Cancel.lar'
+        }).then((result) => {
+
+                if (result.value) {
+
+                    axios.put('/autorizarpeticion' ,{
+                        IDPeticion: myId,
+                })
+                    .then(response => {
+                        
+                        if (response.data.success) {
+                            Swal.fire(
+                                'Tot correcte!',
+                                'Petició Autoritzada correctament',
+                                'success'
+                            )                            
+                            $('#myEventSelectTable').DataTable().ajax.reload();
+
+                            updateCounters();
+                         
+                        } else {
+                            Swal.fire(
+                                'Error!',
+                                'No ha sigut possible autoritzar la petició',
+                                'error'
+                      )
+                        }
+                
+                    })
+                    .catch( function (error) {
+                                console.log (error)
+                    });
+                }
+        })        
+    }
+
+
+    function cancelarPeticion (myId) {
+   
+        Swal.fire({
+        title: 'Cancel-lar petició',
+        text: "Indica el motiu de la cancel.lació",
+        icon: 'error',
+        showCancelButton: true,
+        confirmButtonColor: '#129443',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, cancel.lar petició!',
+        cancelButtonText: 'No Cancel.lar'
+        }).then((result) => {
+    
+                if (result.value) {
+
+                    axios.put('/cancelarpeticion' ,{
+                        IDPeticion: myId,
+                })
+                    .then(response => {
+                        
+                        if (response.data.success) {
+                            Swal.fire(
+                                'Tot correcte!',
+                                'Petició Cancel.lada correctament',
+                                'success'
+                            )                            
+                            $('#myEventSelectTable').DataTable().ajax.reload();
+
+                            updateCounters();
+                         
+                        } else {
+                            Swal.fire(
+                                'Error!',
+                                'No ha sigut possible cancel.lar la petició',
+                                'error'
+                      )
+                        }
+                
+                    })
+                    .catch( function (error) {
+                                console.log (error)
+                    });
+                }
+        })        
+    }    
+
+    function asignarPeticionLogisticaParaEnvio() {
+
+
+        
+            $('#myNombreEnvioPrincipal').text(nombreAsistentePrincipal);
+            $('#myEmailPrincipal').text(emailAsistentePrincipal);
+
+            $('#myModalLogisticaAsignarParaEnvio').modal('show'); 
+
+    }
+
+
+    function enviarEmailPeticionLogistica(myId) {
+
+
+
+        Swal.fire({
+        title: 'Enviar petició',
+        text: "¿Segur que vols enviar aquesta petició?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#129443',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, enviar petició!',
+        cancelButtonText: 'Cancel.lar'
+        }).then((result) => {
+
+                if (result.value) {
+
+                    axios.put('/enviarpeticionlogistica' ,{
+                        IDPeticion: myId,
+                      
+                })
+                    .then(response => {
+                        
+                        if (response.data.success) {
+                            Swal.fire(
+                                'Tot correcte!',
+                                'Petició enviada correctament',
+                                'success'
+                            )                            
+                            $('#myEventSelectTable').DataTable().ajax.reload();
+                            
+                        } else {
+                            Swal.fire(
+                                'Error!',
+                                'No ha sigut possible enviar la petició',
+                                'error'
+                      )
+                      }
+                      closeAllModals();
+                    })
+                    .catch( function (error) {
+                                console.log (error)
+                    });
+                }
+        })             
+
+
+
+    }
+
+    function modificarPeticionLogistica(myId) {
+
+        var myMotivo_modificacion;
+        var myMotivo_modificacion_id;
+        var myMotivo_modificacion_descripcion;
+
+        myMotivo_modificacion = $('#myMotivoSelectLogistica option:selected').text();
+        myMotivo_modificacion_id  = $('#myMotivoSelectLogistica').val();
+
+        myMotivo_modificacion_descripcion  = $('#myDescripcionMotivoModificacion').val();
+
+        Swal.fire({
+        title: 'Modificar petició',
+        text: "¿Segur que vols modificar aquesta petició?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#129443',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, modificar petició!',
+        cancelButtonText: 'Cancel.lar'
+        }).then((result) => {
+
+                if (result.value) {
+
+                    axios.put('/modificarpeticion' ,{
+                        IDPeticion: myId,
+                        motivo_modificacion: myMotivo_modificacion,
+                        motivo_modificacion_id: myMotivo_modificacion_id,
+                        motivo_modificacion_descripcion: myMotivo_modificacion_descripcion
+                })
+                    .then(response => {
+                        
+                        if (response.data.success) {
+                            Swal.fire(
+                                'Tot correcte!',
+                                'Petició modificada correctament',
+                                'success'
+                            )                     
+
+                            $('#myEventSelectTable').DataTable().ajax.reload();
+                            closeAllModalsAutorizador();                                   
+                           
+                        } else {
+                            Swal.fire(
+                                'Error!',
+                                'No ha sigut possible modificar la petició',
+                                'error'
+                      )
+                      
+                            closeAllModalsAutorizador();
+                      }
+                
+                    })
+                    .catch( function (error) {
+                                console.log (error)
+                    });
+                }
+        })        
+
+    }
+
+   
+
+    function cancelarPeticionLogistica(myId) {
+
+        console.log ('entrando en borrar LOGISTICA');
+        var myMotivo_cancelacion;
+        var myMotivo_cancelacion_id;
+        var myMotivo_cancelacion_descripcion;
+
+        myMotivo_cancelacion = $('#myMotivoCancelarSelectLogistica option:selected').text();
+        myMotivo_cancelacion_id  = $('#myMotivoCancelarSelectLogistica').val();
+
+        myMotivo_cancelacion_descripcion  = $('#myDescripcionMotivoCancelar').val();
+
+        Swal.fire({
+        title: 'Cancel.lar petició',
+        text: "¿Segur que vols cancel.lar aquesta petició?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#129443',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, cancel.lar petició!',
+        cancelButtonText: 'Cancel.lar'
+        }).then((result) => {
+
+            if (result.value) {
+
+                axios.put('/cancelarpeticionautorizador' ,{
+                    IDPeticion: myId,
+                    motivo_cancelacion: myMotivo_cancelacion,
+                    motivo_cancelacion_id: myMotivo_cancelacion_id,
+                    motivo_cancelacion_descripcion: myMotivo_cancelacion_descripcion
+            })
+                .then(response => {
+                    
+                    if (response.data.success) {
+                        Swal.fire(
+                            'Tot correcte!',
+                            'Petició cancel.lada correctament',
+                            'success'
+                        )                  
+                        $('#myEventSelectTable').DataTable().ajax.reload();
+                            closeAllModalsAutorizador();                                  
+                    
+                    } else {
+                        Swal.fire(
+                            'Error!',
+                            'No ha sigut possible modificar la petició',
+                            'error'
+                )
+                        $('#myEventSelectTable').DataTable().ajax.reload();
+                                            
+                }
+            
+                })
+                .catch( function (error) {
+                            console.log (error)
+                });
+            }
+        })        
+}
+
+
+    function closeAllModalsAutorizador() {
+        $('#myModalPeticionesVerAutorizador').modal('hide'); 
+        $('#myModalLogisticaModificar').modal('hide'); 
+        $('#myModalLogisticaCancelar').modal('hide'); 
+    }
+
+
+    function closeModifyModal() {
+        $('#myModalLogisticaModificar').modal('hide'); 
+    }
+    function closeCancelModal() {
+        $('#myModalLogisticaCancelar').modal('hide'); 
+    }
+
+    function editarPeticionModal() {
+        console.log (myPeticionID);
+
+        $('#myModalLogisticaModificar').modal('show'); 
+    }
+
+    function cancelarPeticionModal() {
+        $('#myModalLogisticaCancelar').modal('show'); 
+    }
+    
+    
+    function activarTimer() {
+              
+    }
+
+    function updateCounters() {
+
+                axios.get('/checkinvitationscounter' )
+                    .then(response => {
+                        
+                        if (response.data.success) {
+                          
+                    
+                        $('#numPeticionsPendents').text(response.data.num1);
+                        $('#numPeticionsAutoritzades').text(response.data.num2);
+                        $('#numPeticionsCancelades').text(response.data.num3);
+                        $('#numPeticionsTotals').text(response.data.num4);                         
+                        } else {
+                        }
+                
+                    })
+                    .catch( function (error) {
+                                console.log (error)
+                    });
+
+
+                    $('#myEventSelectTable').DataTable().ajax.reload();
+
+
+        
+    }
+
+    function initUpdateCounters() {
+        $('#numPeticionsPendents').text('1');
+        $('#numPeticionsAutoritzades').text('1');
+        $('#numPeticionsCancelades').text('1');
+        $('#numPeticionsTotals').text('1');
+    }
+
+    function closeAllModals() {
+        $('#myModalPeticionesVerAutorizador').modal('hide'); 
+        $('#myModalLogisticaAsignar').modal('hide'); 
+        $('#myModalLogisticaAsignarParaEnvio').modal('hide'); 
+        $('#myModalLogisticaModificar').modal('hide'); 
+        $('#myModalLogisticaCancelar').modal('hide'); 
+    }
+  
+    activarTimer();
+    initUpdateCounters();    
+
+</script>    

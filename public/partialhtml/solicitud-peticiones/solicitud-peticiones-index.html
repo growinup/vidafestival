@@ -1,0 +1,52 @@
+
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <h6 tkey="dashboard_solicitud_peticiones__select__actividad">ACTIVITAT</h6>
+                                <select name="myActivity"  class="form-control" id="myActivity" onchange="myActivitySelectChangePanelSeleccionPeticiones()">
+                            
+                                </select>
+                            </div>
+                     
+                            <div class="col-md-4 col-12">
+                                <h6 tkey="dashboard_solicitud_peticiones__select__tipologia_evento">TIPOLOGIA D'ESDEVENIMENT</h6>
+                                <select name="myType"  class="form-control" id="myType" onchange="myActivityTypeSelectChangePanelSeleccionPeticiones()">
+                                    <option value="0">Todos</option>
+                                    <option value="1">Conciertos</option>
+                                    <option value="3">Otro</option>
+                                </select>
+                            </div>                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col">
+        
+        <div class="card">
+            <div class="card-header">
+                <h4 tkey="dashboard_solicitud_peticiones__header">LLISTAT DESDEVENIMENTS</h4>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <a href="#" class="btn btn-primary mb-3" onclick="mostrarPanelPeticiones()" tkey="dashboard_solicitud_peticiones__boton__ver_peticiones" >Veure peticions</a>
+                    </div>                            
+                </div>                
+            </div>
+            
+            <div class="card-body">
+                <table id="myEventSelectTable" class="table table-striped table-bordered nowrap" style="width:100%">
+                    <thead></thead>
+            
+                    <tbody></tbody>
+                </table>                    
+            </div>
+        </div>
+    </div>
+</div>    

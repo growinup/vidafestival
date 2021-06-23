@@ -1,0 +1,578 @@
+{
+    "titulo_layout_main": "Marenostrum Fuengirola",
+    "inicio_de_sesion_header": "Inicio de sesión",
+    "inicio_de_sesion_label_email": "Su email",
+    "inicio_de_sesion_label_password": "Su contraseña",
+    "inicio_de_sesion_recordar": "Recordar",
+    "inicio_de_sesion_olvidada_contraseña": "¿No recuerda su contraseña?",
+    "inicio_de_sesion_boton_iniciar_sesion": "Iniciar sesión",
+    
+    "reset_password__titulo": "Marenostrum Fuengirola",
+    "reset_password__header": "Restablecer password",
+    "reset_password__boton": "Link de reset de  password",    
+    
+    "reset_password__volver_appcess": "Volver a appcess",
+    "reset_password__inicio_de_sesion": "Inicio de sesión",
+    
+
+    "menu_carga_datos": "CARGA DE DATOS",
+    "menu_carga_datos__ubicaciones": "Ubicaciones",
+    "menu_carga_datos__ubicaciones__ubicacion": "Ubicación",
+    "menu_carga_datos__ubicaciones__tipologia_actividad": "Tipología actividad",
+    "menu_carga_datos__ubicaciones__sector":"Sector",
+    "menu_carga_datos__ubicaciones__zona":"Zona",
+
+    "menu_carga_datos__eventos": "Eventos",
+    "menu_carga_datos__eventos_tipologia_eventos": "Tipología eventos",
+    "menu_carga_datos__eventos_calendario": "Calendario",
+    "menu_carga_datos__eventos_tipos_invitaciones": "Tipos de invitaciones",
+
+    "menu_carga_datos__peticiones":"Peticiones",
+    "menu_carga_datos__peticiones_motivos": "Motivos",
+    "menu_carga_datos__peticiones_finalidades": "Finalidades",
+
+    "menu_carga_datos__bbdd": "Base de datos",
+    "menu_carga_datos__bbdd__areas": "Áreas",
+    "menu_carga_datos__bbdd__departamentos":"Departamentos",
+    "menu_carga_datos__bbdd_asistentes": "Asistentes",
+    "menu_carga_datos__bbdd_prohibiciones": "Black list",
+    "menu_carga_datos__bbdd_empleados": "Empleados",
+    "menu_carga_datos__bbdd_usuarios_sistema": "Usuarios sistema",
+
+    "menu_carga_datos__imagen_corp" : "Imagen corp",
+    "menu_carga_datos__imagen_corp__plantillas": "Plantillas",
+    "menu_carga_datos__imagen_corp__branding": "Branding",
+    "menu_carga_datos__imagen_corp__textos_legales": "Textos legales",
+    "menu_carga_datos__imagen_corp__mensajes_standard": "Mensajes Standard",
+
+    "menu_carga_datos__configuracion": "Configuración",
+    "menu_carga_datos__configuracion__idiomas": "Idiomas",
+    "menu_carga_datos__configuracion__nacionalidades":"Nacionalidades",
+    "menu_carga_datos__configuracion_roles":"Roles",
+    "menu_carga_datos__configuracion_permisos":"Permisos",
+    "menu_carga_datos__configuracion__servidores":"Servidores",
+    "menu_carga_datos__configuracion__otros":"Otros",
+    "menu_carga_datos__configuracion__notificaciones":"Notificaciones",
+
+    "menu_gestion_eventos":"GESTIÓN EVENTOS",
+    "menu_gestion_eventos__eventos":"Eventos",
+    "menu_gestion_eventos__eventos__crear":"Crear",
+    "menu_gestion_eventos__eventos__listar":"Listar",
+    "menu_gestion_eventos__calendario":"Calendario",
+    "menu_gestion_eventos__entradas_y_cupos":"Entradas y cupos",
+
+    "menu_gestion_eventos__bbdd":"Base de datos",
+    "menu_gestion_eventos__bbdd__usuarios_sistema":"Usuarios sistema",
+    "menu_gestion_eventos__bbdd__prohibiciones":"Black List",
+    "menu_gestion_eventos__bbdd__empleados":"Empleados",
+    "menu_gestion_eventos__bbdd__asistentes":"Asistentes",
+    "menu_gestion_eventos__bbdd__plantillas":"Plantillas",
+
+    "menu_peticiones":"PETICIONES",
+    "menu_peticiones__peticiones":"Peticiones",
+    "menu_peticiones__peticiones__listar":"Listar",
+    "menu_peticiones__peticiones__nueva_peticion":"Nueva petición",
+    "menu_peticiones__peticiones__bbdd":"Base de datos",
+    "menu_peticiones__peticiones__bbdd__asistentes":"Asistentes",
+    "menu_peticiones__peticiones__bbdd__listados":"Listados",
+    "menu_peticiones__peticiones__bbdd__listados_listados":"Listados",
+
+    "menu_autorizaciones":"AUTORIZACIONES",
+    "menu_autorizaciones__peticiones":"Peticiones",
+    "menu_autorizaciones__peticiones__listar":"Listar",
+    "menu_autorizaciones__peticiones_autorizar":"Autorizar",
+    "menu_autorizaciones__peticiones__listados":"Listados",
+    "menu_autorizaciones__peticiones__listados__listados":"Listados",
+
+    "menu_logistica":"LT",
+    "menu_logistica__peticiones":"Peticiones",
+    "menu_logistica__peticiones__listar":"Listar",
+    "menu_logistica__peticiones__asignar":"Asignar",
+    "menu_logistica__calendario":"Calendario",
+    "menu_logistica__listados":"Listados",
+    "menu_logistica__listados__listados":"Listados",
+
+    "menu_informes":"INFORMES",
+    "menu_informes__informes":"Informes",
+    "menu_informes__informes__peticiones":"Peticiones",
+
+
+    "dashboard_gestor__header":"GESTOR",
+    "dashboard_gestor__bc":"LISTADO DE PETICIONES",
+    "dashboard_gestor__totales__pendinetes":"Pendientes",
+    "dashboard_gestor__totales__autorizadas":"Autorizadas",
+    "dashboard_gestor__totales__canceladas":"Canceladas",
+    "dashboard_gestor__totales__modificadas":"Modificadas",
+    "dashboard_gestor__totales__pendientes_enviar":"Pendientes enviar",
+    "dashboard_gestor__totales__enviadas":"Enviadas",
+
+    "dashboard_gestor__boton__filtro_avanzado":"Filtro avanzado",
+
+    "modal__resumen_peticion__ver__header":"Resumen de la petición",
+    "modal__resumen_peticion__ver__estado_peticion":"Estado de la petición",
+    "modal__resumen_peticion__ver__info__codigo_peticion":"Código petición",
+    "modal__resumen_peticion__ver__info__fecha_peticion":"Fecha petición",
+    "modal__resumen_peticion__ver__info__evento":"Evento",
+    "modal__resumen_peticion__ver__info__fecha_evento":"Fecha Evento",
+    "modal__resumen_peticion__ver__info__peticionario":"Peticionario",
+    "modal__resumen_peticion__ver__info__departamento":"Departamento",
+    "modal__resumen_peticion__ver__info__en_nombre_de":"En nombre de",
+    "modal__resumen_peticion__ver__info__finalidad":"Finalidad",
+    "modal__resumen_peticion__ver__info__tipo":"Tipo",
+    "modal__resumen_peticion__ver__info__zona":"Zona",
+    "modal__resumen_peticion__ver__info__cantidad":"Cantidad",
+    "modal__resumen_peticion__ver__info__Precio_total":"Precio Total",
+
+    "modal__resumen_peticion__ver__info__invitados":"Asistentes",
+
+    "modal__resumen_peticion__ver__tabla__nombre":"Nombre",
+    "modal__resumen_peticion__ver__tabla__apellidos":"Apellidos",
+    "modal__resumen_peticion__ver__tabla__dni":"Dni",
+    "modal__resumen_peticion__ver__tabla__fecha_nacimiento":"Fecha nacimiento",
+    "modal__resumen_peticion__ver__tabla__nacionalidad":"Nacionalidad",
+    "modal__resumen_peticion__ver__tabla__email":"Email",
+    "modal__resumen_peticion__ver__tabla__principal":"Principal",
+
+    "modal__resumen_peticion__ver__footer_boca":"Boca",
+    "modal__resumen_peticion__ver__footer_fila":"Fila",
+    "modal__resumen_peticion__ver__footer_asiento":"Asiento",
+    "modal__resumen_peticion__ver__footer_descripcion":"Descripción",
+
+    "modal__resumen_peticion__ver__footer_segundo_mail":"Enviar petición completa a otro email",
+
+    "modal__resumen_peticion__ver__boton__modificar":"Modificar",
+    "modal__resumen_peticion__ver__boton__cancelar":"Cancelar",
+    "modal__resumen_peticion__ver__boton__autorizar":"Autorizar",
+    "modal__resumen_peticion__ver__boton__asignar":"Asignar",
+
+    "modal__resumen_peticion__modificar__header":"Modificar petición",
+    "modal__resumen_peticion__modificar__motivo":"Motivo",
+    "modal__resumen_peticion__modificar__descripción_motivo":"Descripción del motivo",
+
+    "modal__resumen_peticion__modificar__boton__notificar":"Notificar",
+    "modal__resumen_peticion__modificar__boton__cerrar":"Cerrar",
+
+
+    "modal__resumen_peticion__cancelar__header":"Modificar petición",
+    "modal__resumen_peticion__cancelar__motivo":"Motivo",
+    "modal__resumen_peticion__cancelar__descripción_motivo":"Descripción del motivo",
+
+    "modal__resumen_peticion__cancelar__boton__notificar":"Notificar",
+    "modal__resumen_peticion__cancelar__boton__cerrar":"Cerrar",
+
+    "modal__resumen_peticion__asignar__header":"Asignar petición",
+    "modal__resumen_peticion__asignar__cantidad_asignar":"Cantidad a asignar",
+    
+    "modal__resumen_peticion__asignar__zona":"Zona",
+    "modal__resumen_peticion__asignar__boca":"Boca",
+    "modal__resumen_peticion__asignar__fila":"Fila",
+    "modal__resumen_peticion__asignar__asientos":"Asientos",
+    "modal__resumen_peticion__asignar__descripcion":"Descripción",
+    "modal__resumen_peticion__asignar__boton__grabar_peticion":"Grabar petición",
+    "modal__resumen_peticion__asignar__boton__siguiente":"Siguiente",
+    "modal__resumen_peticion__asignar__boton__cerrar":"Cerrar",
+
+    "modal__resumen_peticion__enviar__header":"Email petición",
+    "modal__resumen_peticion__enviar__nombre_y_apellidos":"Nombre y apellidos",
+    "modal__resumen_peticion__enviar__asunto":"Asunto",
+    "modal__resumen_peticion__enviar__boton__enviar":"Enviar",
+    "modal__resumen_peticion__enviar__boton__cerrar":"Cerrar",
+
+
+    "dashboard_autorizador__header":"AUTORIZAR PETICIONES",
+    "dashboard_autorizador__bc":"LISTADO PETICIONES",
+   
+    "dashboard_autorizador__totales__pendinetes":"Pendientes",
+    "dashboard_autorizador__totales__autorizadas":"Autorizadas",
+    "dashboard_autorizador__totales__canceladas":"Canceladas",
+    "dashboard_autorizador__totales__modificadas":"Modificadas",
+    "dashboard_autorizador__totales__enviadas":"Enviadas",
+    "dashboard_autorizador__totales__total_area":"Total área",
+
+    "dashboard_autorizador__boton__filtro_avanzado":"Filtro avanzado",
+
+
+    "dashboard_logistica__header":"ASIGNAR Y ENVIAR PETICIONES",
+    "dashboard_logistica__bc":"LISTADO PETICIONES",
+   
+    "dashboard_logistica__totales__pendinetes":"Pendientes",
+    "dashboard_logistica__totales__autorizadas":"Autorizadas",
+    "dashboard_logistica__totales__canceladas":"Canceladas",
+    "dashboard_logistica__totales__modificadas":"Modificadas",
+    "dashboard_logistica__totales__enviadas":"Enviadas",
+    "dashboard_logistica__totales__total_area":"Total área",
+
+    "dashboard_logistica__boton__filtro_avanzado":"Filtro avanzado",
+
+    "dashboard__peticiones__header" :"PETICIONES",
+    "dashboard__peticiones__bc" :"LISTADO PETICIONES",
+    "dashboard__peticiones__boton__filtro_avanzado" :"Filtro avanzado",
+    "dashboard__peticiones__boton__nueva_peticion" :"Nueva petición",
+    "dashboard__peticiones__totales_pendientes" :"Pendientes",
+    "dashboard__peticiones__totales_autorizadas" :"Autorizadas",
+    "dashboard__peticiones__totales_canceladas" :"Canceladas",
+    "dashboard__peticiones__totales_modificadas" :"Modificadas",
+    "dashboard__peticiones__totales_enviadas" :"Enviadas",
+    "dashboard__peticiones__totales_total_departamento" :"Total departamento",
+
+
+    "dashboard_solicitud_peticiones__bc" :"PETICIONES",
+    "dashboard_solicitud_peticiones__bc_path1__nueva_peticion" :"LISTADO PETICIONES",
+    "dashboard_solicitud_peticiones__bc_path2__nueva_peticion" :"NUEVA PETICIÓN",    
+    "dashboard_solicitud_peticiones__select__actividad" :"ACTIVIDAD",
+    "dashboard_solicitud_peticiones__select__tipologia_evento" :"TIPOLOGÍA EVENTO",
+    "dashboard_solicitud_peticiones__header" :"LISTADO DE EVENTOS",
+    "dashboard_solicitud_peticiones__boton__ver_peticiones":"Ver peticiones",
+
+
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__info__codigo" :"Código petición:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__info__fecha_peticion" :"Fecha petición:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__info__evento" :"Evento:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__info__fecha_evento" :"Fecha:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__info__peticionario" :"Peticionario:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__info__departamento" :"Departamento:",
+    
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__en_nombre_de" :"* En nombre de:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__finalidad" :"Finalidad:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__tipo" :"Tipo:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__idioma" :"Idioma:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__zona" :"Zona:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__cantidad" :"* Cantidad:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__stock" :"Stock:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__restante" :"Restante:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__label__importe" :"Importe:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__boton__grabar" :"Grabar",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__boton__siguiente" :"Siguiente",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_1__boton__cerrar" :"Cerrar",
+
+
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__codigo" :"Código petición:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__fecha_peticion" :"Fecha petición:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__evento" :"Evento:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__fecha_evento" :"Fecha:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__peticionario" :"Peticionario:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__departamento" :"Departamento:",   
+    
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__en_nombre_de" :"En nombre de:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__finalidad" :"Finalidad:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__tipo" :"Tipo:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__idioma" :"Idioma:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__zona" :"Zona:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__cantidad" :"Cantidad:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__stock" :"Stock:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__restante" :"Restante:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__info__importe" :"Importe:",
+
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__select_id__dni" :"DNI",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__select_id__pasaporte" :"Pasaporte",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__select_id__nie" :"NIE",
+
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__input__email" :"Email:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__input__nombre" :"* Nombre:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__input__apellidos" :"* Apellidos:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__input__fecha_nacimiento" :"Fecha nacimiento:",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__input__nacionalidad" :"Nacionalidad",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__checkbox__principal" :"Asistente principal",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__input__otro_mail" :"Enviar petición completa a otro email",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__label__invitados" :"Invitados",
+
+
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__boton__add" :"Añadir",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__boton__grabar" :"Grabar",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__boton__guardar" :"Guardar",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__boton__siguiente" :"Continuar",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_2_ASISTENTES__boton__cerrar" :"Cerrar",
+    
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__header" :"Resumen de la petición",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__boton__cerrar" :"Cerrar",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__boton__enviar" :"Enviar",
+
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__nombre" :"Nombre",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__apellidos" :"Apellidos",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__dni" :"Dni",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__fecna_nacimiento" :"Fecha nacimiento",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__nacionalidad" :"Nacionalidad",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__email" :"Email",
+    "MODAL__SOLICITUD_PETICIONES__MODAL_3_ASISTENTES__tabla__headers__principal" :"Principal",
+
+
+    "MODAL__CREAR_EVENTO__HEADER" :"NUEVO EVENTO",
+    "MODAL__CREAR_EVENTO__SELECT_UBICACION" :"UBICACIÓN",
+    "MODAL__CREAR_EVENTO__SELECT_ACTIVIDAD" :"ACTIVIDAD",
+    "MODAL__CREAR_EVENTO__SELECT_TIPOLOGIA_ACTIVIDAD" :"TIPOLOGIA EVENTO",
+    "MODAL__CREAR_EVENTO__INPUT_NOMBRE" :"Nombre evento",
+    "MODAL__CREAR_EVENTO__INPUT_FECHA" :"Fecha",
+    "MODAL__CREAR_EVENTO__CHECKBOX_FECHA_NO_CONFIRMADA" :"Fecha no confirmada",
+    "MODAL__CREAR_EVENTO__INPUT_HORA" :"Hora",
+    "MODAL__CREAR_EVENTO__BOTON__CREAR_EVENTO" :"Crear evento",
+    "MODAL__CREAR_EVENTO__BOTON__CERRAR" :"Cerrar",
+
+    
+    "panel__listado_eventos__header" :"EVENTOS",
+    "panel__listado_eventos__bc" :"LISTADO EVENTOS",
+    "panel__listado_eventos__select__ubicacion" :"UBICACIÓN",
+    "panel__listado_eventos__select__actividad" :"ACTIVIDAD",
+    "panel__listado_eventos__select__tipo" :"TIPO",
+    "panel__listado_eventos__boton_filtro_avanzado" :"Filtro avanzado",
+    "panel__listado_eventos__boton_crear_evento" :"Crear evento",
+
+
+    "MODAL__EDITAR_EVENTO__HEADER" :"Modificar evento",
+    "MODAL__EDITAR_EVENTO__SELECT__UBICACION" :"UBICACIÓN",
+    "MODAL__EDITAR_EVENTO__SELECT__ACTIVIDAD" :"ACTIVIDAD",
+    "MODAL__EDITAR_EVENTO__SELECT__TIPOLOGIA_ACTIVIDAD" :"TIPOLOGÍA ACTIVIDAD",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO" :"DATOS EVENTO",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__NOMBRE" :"Nombre evento",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__FECHA" :"Fecha",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__FECHA_NO_CONFIRMADA" :"Fecha no confirmada",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__HORA" :"Hora",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__JORNADA" :"Jornada",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__AFORO" :"Aforo",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL" :"Nivel",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL_0" :"Sin autorización",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL_1" :"Con autorización",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL_2" :"Doble autorización",
+
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__TIPO_INVITACIONES_INVITACION" :"Invitación",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__TIPO_INVITACIONES_COMPRA" :"Prensa",
+    "MODAL__EDITAR_EVENTO__DATOS_EVENTO__TIPO_INVITACIONES_PASE" :"Acreditación staff",
+
+    "MODAL__EDITAR_EVENTO__ENTRADAS_Y_CUPOS__HEADER" :"ENTRADAS Y CUPOS",
+    "MODAL__EDITAR_EVENTO__ENTRADAS_Y_CUPOS__SELECT__SECTOR" :"SECTOR",
+    "MODAL__EDITAR_EVENTO__ENTRADAS_Y_CUPOS__SELECT__SECTOR__PLACEHOLDER" :"Selección de sector",
+    "MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO" :"CUPO POR DEPARTAMENTO",
+    "MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__MODALIDAD__HEADER" :"Selección de modalidad",
+    "MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__MODALIDAD__CUPO_GENERICO" :"Cupo genérico",
+    "MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__MODALIDAD__CUPO_DEPARTAMENTO_Y_ZONA" :"Cupo por departamento y zona",
+    "MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__SELECT_AREA" :"AREA",
+    "MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__SELECT_SECTOR" :"SECTOR",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_HEADER" :"PLANTILLAS DISPONIBLES",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_HEADER_PANEL" :"PLANTILLAS EVENTO",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_IDIOMA" :"Idioma de las plantillas",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION" :"Tipo de invitación",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION_INVITACION" :"Invitación",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION_COMPRA" :"Prensa",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION_PASE" :"Acreditación staff",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_PLANTILLAS_DISPONIBLES" :"Plantillas disponibles",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_BOTON_EDITAR_PLANTILLA" :"Editar plantilla",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_BOTON_ACTUALIZAR" :"Actualizar evento",
+    "MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_BOTON_CERRAR" :"Cerrar",
+
+    "MODAL__EDITAR_EVENTO__EDITOR_PLANTILLAS__HEADER" :"Plantilla",
+    "MODAL__EDITAR_EVENTO__EDITOR_PLANTILLAS__BOTON__RESET" :"Reset original",
+    "MODAL__EDITAR_EVENTO__EDITOR_PLANTILLAS__INPUT_ASUNTO" :"Asunto",
+    "MODAL__EDITAR_EVENTO__EDITOR_PLANTILLAS__BOTON__GUARDAR" :"Guardar plantilla",
+    "MODAL__EDITAR_EVENTO__EDITOR_PLANTILLAS__BOTON__CERRAR" :"Cerrar",
+
+    "PANEL__PLANTILLAS__HEADER" :"PLANTILLAS",
+    "PANEL__PLANTILLAS__BC" :"LISTADO DE PLANTILLAS",
+    "PANEL__PLANTILLAS__SELECT__UBICACIONES" :"UBICACIONES",
+    "PANEL__PLANTILLAS__SELECT__ACTIVIDAD" :"ACTIVIDAD",
+    "PANEL__PLANTILLAS__SELECT__TIPOLOGIA_EVENTO" :"TIPOLOGÍA EVENTO",
+    "PANEL__PLANTILLAS__BOTON__NUEVA_PLANTILLA" :"NUEVA PLANTILLA",
+
+    "PANEL__PLANTILLAS__MODAL__HEADER" :"NUEVA PLANTILLA",    
+    "PANEL__PLANTILLAS__MODAL__SELECT__IDIOMA" :"IDIOMA",
+    "PANEL__PLANTILLAS__MODAL__SELECT__UBICACIONES" :"UBICACIONES",    
+    "PANEL__PLANTILLAS__MODAL__SELECT__ACTIVIDAD" :"ACTIVIDAD",
+    "PANEL__PLANTILLAS__MODAL__SELECT__TIPOLOGIA_EVENTO" :"TIPOLOGIA EVENTO",    
+    "PANEL__PLANTILLAS__MODAL__SELECT__TIPO_INVITACION" :"TIPO INVITACION",
+    "PANEL__PLANTILLAS__MODAL__INPUT__NOMBRE" :"Nombre de la plantilla",
+    "PANEL__PLANTILLAS__MODAL__INPUT__ASUNTO" :"Asunto",    
+    "PANEL__PLANTILLAS__MODAL__BOTON__GUARDAR" :"GUARDAR",
+    "PANEL__PLANTILLAS__MODAL__BOTON__CERRAR" :"CERRAR",
+
+
+
+    "PANEL__CARGA_DATOS__UBICACIONES__HEADER" :"UBICACIONES",    
+    "PANEL__CARGA_DATOS__UBICACIONES__BC" :"LISTADO UBICACIONES",    
+    "PANEL__CARGA_DATOS__UBICACIONES__BOTON__NUEVO" :"Nueva Ubicación",        
+    "PANEL__CARGA_DATOS__UBICACIONES__MODAL__NOMBRE_UBICACION" :"Nombre Ubicación",    
+    "PANEL__CARGA_DATOS__UBICACIONES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__UBICACIONES__MODAL__BOTON__CERRAR" :"Cerrar",    
+    
+
+    "PANEL__CARGA_DATOS__ACTIVIDADES__HEADER" :"ACTIVIDADES",    
+    "PANEL__CARGA_DATOS__ACTIVIDADES__BC" :"LISTADO ACTIVIDADES",    
+    "PANEL__CARGA_DATOS__ACTIVIDADES__BOTON__NUEVO" :"Nueva actividad",        
+    "PANEL__CARGA_DATOS__ACTIVIDADES__MODAL__NOMBRE_ACTIVIDAD" :"Nombre actividad",    
+    "PANEL__CARGA_DATOS__ACTIVIDADES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__ACTIVIDADES__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__SECTORES__HEADER" :"SECTORES",    
+    "PANEL__CARGA_DATOS__SECTORES__BC" :"LISTADO SECTORES",    
+    "PANEL__CARGA_DATOS__SECTORES__BOTON__NUEVO" :"Nuevo sector",        
+    "PANEL__CARGA_DATOS__SECTORES__MODAL__NOMBRE_SECTOR" :"Nombre sector",    
+    "PANEL__CARGA_DATOS__SECTORES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__SECTORES__MODAL__BOTON__CERRAR" :"Cerrar",    
+    
+    "PANEL__CARGA_DATOS__ZONAS__HEADER" :"ZONAS",    
+    "PANEL__CARGA_DATOS__ZONAS__BC" :"LISTADO ZONAS",    
+    "PANEL__CARGA_DATOS__ZONAS__BOTON__NUEVO" :"Nueva zona",        
+    "PANEL__CARGA_DATOS__ZONAS__MODAL__NOMBRE_ZONA" :"Nombre zona",    
+    "PANEL__CARGA_DATOS__ZONAS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__ZONAS__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__TIPOLOGIA_ACTIVIDAD__HEADER" :"TIPOLOGÍA EVENTOS",    
+    "PANEL__CARGA_DATOS__TIPOLOGIA_ACTIVIDAD__BC" :"LISTADO TIPOLOGÍA EVENTOS",    
+    "PANEL__CARGA_DATOS__TIPOLOGIA_ACTIVIDAD__BOTON__NUEVO" :"Nueva tipologia evento",        
+    "PANEL__CARGA_DATOS__TIPOLOGIA_ACTIVIDAD__MODAL__NOMBRE_TIPOLOGIA_EVENTO" :"Nombre tipologia evento" ,    
+    "PANEL__CARGA_DATOS__TIPOLOGIA_ACTIVIDAD__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__TIPOLOGIA_ACTIVIDAD__MODAL__BOTON__CERRAR" :"Cerrar",    
+    
+    "PANEL__CARGA_DATOS__TIPO_INVITACIONES__HEADER" :"TIPOS INVITACIONES",    
+    "PANEL__CARGA_DATOS__TIPO_INVITACIONES__BC" :"LISTADO TIPOS INVITACIONES",    
+    "PANEL__CARGA_DATOS__TIPO_INVITACIONES__BOTON__NUEVO" :"Nuevo de invitacion",        
+    "PANEL__CARGA_DATOS__TIPO_INVITACIONES__MODAL__NOMBRE_TIPOLOGIA_EVENTO" :"Nombre tipo de invitación" ,    
+    "PANEL__CARGA_DATOS__TIPO_INVITACIONES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__TIPO_INVITACIONES__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__MOTIVOS__HEADER" :"MOTIVOS MODIFICACIÓN PETICIONES",    
+    "PANEL__CARGA_DATOS__MOTIVOS__BC" :"LISTADO DE MOTIVOS",    
+    "PANEL__CARGA_DATOS__MOTIVOS__BOTON__NUEVO" :"Nuevo motivo",        
+    "PANEL__CARGA_DATOS__MOTIVOS__MODAL__DESCRIPCION_MOVITO" :"Descripción motivo" ,    
+    "PANEL__CARGA_DATOS__MOTIVOS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__MOTIVOS__MODAL__BOTON__CERRAR" :"Cerrar",    
+        
+
+    "PANEL__CARGA_DATOS__FINALIDADES__HEADER" :"FINALIDADES",    
+    "PANEL__CARGA_DATOS__FINALIDADES__BC" :"LISTADO DE FINALIDADES",    
+    "PANEL__CARGA_DATOS__FINALIDADES__BOTON__NUEVO" :"Nueva finalidad",        
+    "PANEL__CARGA_DATOS__FINALIDADES__MODAL__DESCRIPCION_FINALIDAD" :"Descripción finalidad" ,    
+    "PANEL__CARGA_DATOS__FINALIDADES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__FINALIDADES__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__IDIOMAS__HEADER" :"IDIOMAS",    
+    "PANEL__CARGA_DATOS__IDIOMAS__BC" :"LISTADO DE IDIOMAS",    
+    "PANEL__CARGA_DATOS__IDIOMAS__BOTON__NUEVO" :"Nuevo idioma",        
+    "PANEL__CARGA_DATOS__IDIOMAS__MODAL__IDIOMA" :"Nombre idioma" ,    
+    "PANEL__CARGA_DATOS__IDIOMAS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__IDIOMAS__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__NACIONALIDADES__HEADER" :"NACIONALIDADES",    
+    "PANEL__CARGA_DATOS__NACIONALIDADES__BC" :"LISTADO DE NACIONALIDADES",    
+    "PANEL__CARGA_DATOS__NACIONALIDADES__BOTON__NUEVO" :"Nueva nacionalidad",        
+    "PANEL__CARGA_DATOS__NACIONALIDADES__MODAL__NACIONALIDAD" :"Nombre nacionalidad" ,    
+    "PANEL__CARGA_DATOS__NACIONALIDADES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__NACIONALIDADES__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__AREAS__HEADER" :"AREAS",    
+    "PANEL__CARGA_DATOS__AREAS__BC" :"LISTADO DE AREAS",    
+    "PANEL__CARGA_DATOS__AREAS__BOTON__NUEVO" :"Nueva area",        
+    "PANEL__CARGA_DATOS__AREAS__MODAL__AREA" :"Nombre" ,    
+    "PANEL__CARGA_DATOS__AREAS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__AREAS__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+
+    "PANEL__CARGA_DATOS__DEPARTAMENTOS__HEADER" :"DEPARTAMENTOS",    
+    "PANEL__CARGA_DATOS__DEPARTAMENTOS__BC" :"LISTADO DE DEPARTAMENTOS",    
+    "PANEL__CARGA_DATOS__DEPARTAMENTOS__BOTON__NUEVO" :"Nuevo departamento",        
+    "PANEL__CARGA_DATOS__DEPARTAMENTOS__MODAL__DEPARTAMENTO" :"Nombre" ,    
+    "PANEL__CARGA_DATOS__DEPARTAMENTOS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__DEPARTAMENTOS__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+    "PANEL__CARGA_DATOS__ASISTENTES__HEADER" :"ASISTENTES",    
+    "PANEL__CARGA_DATOS__ASISTENTES__BC" :"LISTADO DE ASISTENTES",    
+    "PANEL__CARGA_DATOS__ASISTENTES__BOTON__NUEVO" :"Nuevo asistente",        
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__NACIONALIDAD" :"Nacionalidad" ,    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__NOMBRE" :"Nombre" ,    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__APELLIDOS" :"Apellidos" ,    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__DNI" :"DNI" ,    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__ES_MENOR" :"Es menor" ,    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__EMAIL" :"Email" ,    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__FECHA_NACIMEINTO" :"Fecha nacimiento" ,    
+
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__ASISTENTES__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+
+    "PANEL__CARGA_DATOS__PROHIBIDOS__HEADER" :"BLACK LIST",    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__BC" :"BLACK LIST",    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__BOTON__NUEVO" :"Nuevo expediente",        
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__EJERCICIO" :"Ejercicio" ,    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__EXPEDIENTE" :"Expediente" ,    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__FECHA_RESOLUCION" :"Fecha resolución" ,   
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__DELEGACION" :"Delegación" ,   
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__IDENTIFICACION" :"Identificación" ,   
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__NOMBRE" :"Nombre" ,    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__FECHA_INICIO" :"Fecha inicio" ,    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__FECHA_FIN" :"Fecha fin" ,    
+    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__PROHIBIDOS__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+
+    "PANEL__CARGA_DATOS__USUARIOS__HEADER" :"USUARIOS",    
+    "PANEL__CARGA_DATOS__USUARIOS__BC" :"LISTADO DE USUARIOS",    
+    "PANEL__CARGA_DATOS__USUARIOS__BOTON__NUEVO" :"Nuevo usuario",        
+    
+
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__AREA" :"Área" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__DEPARTAMENTO" :"Departamento" ,    
+
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL" :"Rol usuario" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL_GESTOR" :"Gestor" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL_PETICIONARIO" :"Peticionario" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL_AUTORIZADOR" :"autorizador" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL_LOGISTICA" :"Logística" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL_AUTORIZADOR_SEGUNDO_NIVEL" :"Es sutorizador de segundo nivel" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__ROL_AUTORIZADOR_ZONAS_AUTORIZAR" :"Zonas que puede autorizar" ,    
+
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__NOMBRE" :"Nombre y apellidos" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__EMAIL" :"Email (usuario)" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__PASSWORD1" :"Password" ,    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__PASSWORD2" :"Repetir password" ,    
+    
+    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__BOTON__GUARDAR" :"Guardar",    
+    "PANEL__CARGA_DATOS__USUARIOS__MODAL__BOTON__CERRAR" :"Cerrar",    
+
+
+
+
+
+
+
+
+
+
+    "menu_usuario__cerrar_sesion":"Cerrar sesión",
+    "footer__aviso_legal":"Aviso legal",
+    "footer__privacidad":"Privacidad"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

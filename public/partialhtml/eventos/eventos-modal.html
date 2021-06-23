@@ -1,0 +1,362 @@
+<!-- Custom modal start -->
+<div class="row">
+    <div class="col">
+
+        <div class="modal fade" id="myEditEventModal">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" tkey="MODAL__EDITAR_EVENTO__HEADER">Crear nou esdeveniment</h5>
+                    </div>
+                    <div class="container"></div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row mb-3">
+                                            <div class="col-4">
+                                                <h6 tkey="MODAL__EDITAR_EVENTO__SELECT__UBICACION">UBICACIÓ</h6>
+                                                <select name="myUbicacionEdicionEvento" class="form-control" id="myUbicacionEdicionEvento"
+                                                    onchange="myLocationSelectChangeEdicionEventos()">
+                                                    <option value="1">Camp Nou</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-4 col-12">
+                                                <h6 tkey="MODAL__EDITAR_EVENTO__SELECT__ACTIVIDAD">ACTIVITAT</h6>
+                                                <select name="myActivityEdicionEvento" class="form-control" id="myActivityEdicionEvento"
+                                                    onchange="selectActividadChangeEdicionEventos()">
+
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-4 col-12">
+                                                <h6 tkey=MODAL__EDITAR_EVENTO__SELECT__TIPOLOGIA_ACTIVIDAD>TIPOLOGIA ESDEVENIMENT</h6>
+                                                <select name="myTypeEdicionEvento" class="form-control" id="myTypeEdicionEvento"
+                                                    onchange="selectTipoActividadChangeEdicionEventos()">
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 tkey=MODAL__EDITAR_EVENTO__DATOS_EVENTO>DADES DE L'ESDEVENIMENT </h4>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-6">
+
+                                            <div class="form-group row">
+                                                <label for="myNombreEventoEdicionEvento"
+                                                    class="control-label col-sm-12 col-md-12 col-lg-4">Nombre evento</label>
+                                                <div class="col-sm-12 col-lg-8">
+                                                    <input type="text" class="form-control" id="myNombreEventoEdicionEvento"
+                                                        name="myNombreEventoEdicionEvento" placeholder="" value="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-6">
+
+                                            <div class="form-group row">
+                                                <label for="myFechaEventoEdicionEvento"
+                                                    class="control-label col-sm-6 col-md-3" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__FECHA">Data</label>
+                                                <div class="col-sm-6 col-md-3">
+                                                    <input type="text" class="form-control" id="myFechaEventoEdicionEvento"
+                                                        name="myFechaEventoEdicionEvento" placeholder="" value="">
+                                                </div>
+
+                                                <label for="myHoraEventoEdicionEvento"
+                                                    class="control-label col-sm-6  col-md-3" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__HORA">Hora</label>
+                                                <div class="col-sm-6  col-md-3">
+                                                    <input type="text" class="form-control" id="myHoraEventoEdicionEvento"
+                                                        name="myHoraEventoEdicionEvento" placeholder="" value="">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        id="myFechaNoConfirmadaEdicionEvento">
+                                                    <label class="custom-control-label" for="myFechaNoConfirmadaEdicionEvento" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__FECHA_NO_CONFIRMADA">Data
+                                                        no confirmada</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-5">
+
+                                            <div class="form-group row">
+                                                <div class="d-none">
+                                                    <label for="myJornadaEventoEdicionEvento"
+                                                        class="control-label col-sm-3" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__JORNADA">Jornada</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control" id="myJornadaEventoEdicionEvento"
+                                                            name="myJornadaEventoEdicionEvento" placeholder="" value="">
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-none">
+
+                                                    <label for="myAforoEvento"
+                                                        class="control-label col-sm-3" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__AFORO">Aforo</label>
+                                                    <div class="col-sm-3">
+                                                        <input type="text" class="form-control" id="myAforoEvento"
+                                                            myAforoEvento="myAforoEvento" placeholder="" value="">
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-5">
+
+                                            <div class="form-group row">
+
+                                                <label for="myNivellCmbEdicionEvento" class="col-sm-4 col-md-3" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL">Nivell</label>
+                                                <div class="col-sm-4 col-md-5 ">
+                                                    <select name="myNivellCmbEdicionEvento" class="form-control" id="myNivellCmbEdicionEvento">
+                                                        <option value="0" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL_0">Sense autorització</option>
+                                                        <option value="1" selected tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL_1">Autorització</option>
+                                                        <option value="2" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__NIVEL_2">Doble autorització</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group row">
+
+                                        <div class="col-3">
+                                            <select name="myTipoInvitacionEdicionEvento" multiple class="form-control"
+                                                id="myTipoInvitacionEdicionEvento">
+                                                <option value="1" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__TIPO_INVITACIONES_INVITACION">Invitació</option>
+                                                <option value="2" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__TIPO_INVITACIONES_COMPRA">Prensa</option>
+                                                <option value="3" tkey="MODAL__EDITAR_EVENTO__DATOS_EVENTO__TIPO_INVITACIONES_PASE">Acreditación staff</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="card d-none">
+                                <div class="card-header">
+                                    <h4 tkey=MODAL__EDITAR_EVENTO__ENTRADAS_Y_CUPOS__HEADER>ENTRADES I CUPOS </h4>
+                                    <hr>
+
+                                    <div class="row mb-3">
+                                        <div class="col-4">
+                                            <h6 tkey="MODAL__EDITAR_EVENTO__ENTRADAS_Y_CUPOS__SELECT__SECTOR">SECTOR</h6>
+                                            <select name="mySector" onchange="filterZoneSector()" class="form-control"
+                                                id="mySector">
+                                                <option value="0" disabled tkeyç=MODAL__EDITAR_EVENTO__ENTRADAS_Y_CUPOS__SELECT__SECTOR__PLACEHOLDER>Selección de sector</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <table id="cuposyentradas" class="table table-striped table-bordered nowrap"
+                                                style="width:100%">
+                                                <thead></thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 tkey="MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO">CUPO PER DEPARTAMENT </h4>
+                                    <hr>
+
+                                    <div class="row mb-3">
+                                        <div class="col-4">
+
+                                            <h6 tkey="MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__MODALIDAD__HEADER">SELECCIÓ DE MODALITAT</h6>
+                                            <select name="myCupoType" onchange="seleccionModalidadCupo()"
+                                                class="form-control" id="myCupoType">
+                                                <option value="1" tkey="MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__MODALIDAD__CUPO_GENERICO">Cupo genéric</option>
+                                                <option value="2" tkey="MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__MODALIDAD__CUPO_DEPARTAMENTO_Y_ZONA">Cupo per departament i zona</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col-4">
+
+                                            <h6 tkey="MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__SELECT_AREA">ÁREA</h6>
+                                            <select name="myArea" onchange="filterDepartmentZones()"
+                                                class="form-control" id="myArea">
+                                            </select>
+                                        </div>
+
+                                        <div class="col-4" id="mySector2Div">
+                                            <h6 tkey="MODAL__EDITAR_EVENTO__CUPO_POR_DEPARTAMENTO__SELECT_SECTOR">SECTOR</h6>
+                                            <select name="mySector2" onchange="filterDepartmentZones()"
+                                                class="form-control" id="mySector2">
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="row" id="testTablaCuposGenerico">
+                                        <div class="col">
+                                            <table id="cuposdepartamentosgenerico"
+                                                class="table table-striped table-bordered nowrap" style="width:100%">
+                                                <thead>
+                                                </thead>
+                                                <tbody>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row" id="testTablaCupos">
+                                        <div class="col">
+                                            <table id="cuposdepartamentos"
+                                                class="table table-striped table-bordered nowrap" style="width:100%">
+                                                <thead></thead>
+                                                <tbody></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-5">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_HEADER">PLANTILLES DISPONIBLES </h4>
+        
+                                        </div>
+        
+                                        <div class="card-body">
+        
+                                            <!-- selector idioma -->
+        
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="myIdiomaPlantillaEdicionEvento" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_IDIOMA">Idioma de les plantilles</label>
+                                                    <select name="myIdiomaPlantillaEdicionEvento" class="form-control" id="myIdiomaPlantillaEdicionEvento"
+                                                        onchange="cambioSelectIdiomas()">
+                                                        <option value="1">Castellà</option>
+                                                        <option value="2">Català</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <br>
+        
+                                            <!-- selector para seleccion del tipo de invitacion -->
+        
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="myEditarEventoTipoInvitacionSelectPlantilla" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION">Tipus d'invitació</label>
+                                                    <select name="myEditarEventoTipoInvitacionSelectPlantilla" class="form-control"
+                                                        id="myEditarEventoTipoInvitacionSelectPlantilla"
+                                                        onchange="myEditarEventoTipoInvitacionChange()">
+                                                        <option value="1" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION_INVITACION">Invitació</option>
+                                                        <option value="2" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION_COMPRA">Prensa</option>
+                                                        <option value="3" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_TIPO_INVITACION_PASE">Acreditación staff</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <br>
+        
+                                            <!-- plantillas disponibles para el idioma y el tipo de invitacion seleccionados  -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label for="myEditarEventoPlantillaSelect" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_PLANTILLAS_DISPONIBLES">Plantilles disponibles</label>
+                                                    <select name="myEditarEventoPlantillaSelect" class="form-control"
+                                                        id="myEditarEventoPlantillaSelect" onchange="seleccionPlantillaSegunTipoInvitacionEvento()">
+                                                        <option value="0">Sense plantilla</option>
+                                                    </select>
+                                                    <hr>
+                                                    <div class="text-center">
+                                                        <button class="btn btn-primary" onclick="showTemplateEditor(1)" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_BOTON_EDITAR_PLANTILLA">Editar
+                                                            plantilla</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_HEADER_PANEL">PLANTILLES ESDEVENIMENT </h4>
+                                            <div id="plantillasEventoActual">
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <button class="btn btn-warning waves-effect m-b-10 float-right" onclick=" closeAllEditEventModals()" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_BOTON_CERRAR">Tancar</button>                                        
+                                  
+                                    <button type="button" onclick="actualizarEvento()"
+                                        class="btn btn-success waves-effect m-b-10 mr-2 float-right" tkey="MODAL__EDITAR_EVENTO__PLANTILLAS_SELECT_BOTON_ACTUALIZAR">Actualitzar
+                                        esdeveniment</button>
+                                        
+                                        
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- fin modal body  -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<!-- Custom modal end -->

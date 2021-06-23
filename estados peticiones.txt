@@ -1,0 +1,9 @@
+Estado peticiones
+0 -> 
+1 -> Pendiente
+2 -> En Proceso
+3 -> Modificada
+4 -> Cancelada
+5 -> Autorizada
+6 -> Pendiente envio
+7 -> Enviada
