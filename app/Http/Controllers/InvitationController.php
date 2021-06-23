@@ -155,54 +155,7 @@ class InvitationController extends Controller
                     ]);
                 $myGuest = Guest::where('email', $asistente['email'])->first();
             }
-
                  
-            // crear usuario en la app
-            // crear usuario
-
-            // if ($request->level != 0) {
- 
-                $existeUser = ( new UserController)->checkUserEmailApp( $asistente['email'] ) ;
-                if ($existeUser == -1) {
-                    
-                    $res = ( new UserController)->createAppUser (
-                            $asistente['email'],
-                            $asistente['nombre'],
-                            $asistente['apellidos'],
-                            $asistente['dni'],
-                            $myGoodDate );
-
-
-                    if (is_integer($res)) {
-
-                        if ($res == -1) {   
-                
-                        }
-
-                    } else {
-                        $myNewUserActivated =  ( new UserController)->createAppUserAccount( $res->user_id,$asistente['email'] );
-                    }
-
-                    // return response ([
-                    //     'existe' => $existeUser,
-                    //     'res' => $res,                    
-                    // ]);
-
-                    // actualizar id de user en la app
-                    $myGuest->app_user_id = $res->user_id;
-                    $myGuest->save();
-
-                } else {
-                    // usuario ya en la app
-                    $myGuest->app_user_id = $existeUser;
-                    $myGuest->save();
-                }
-
-            // }   
-                        
-            // add to guest_invitations
-            
-            // $myGuestUserToSendEmailToCheck = Guest::where('email',$myEmail)->first();                                   
             $myAppUserId = $myGuest->app_user_id;
 
             $myQR = Str::random(64);
@@ -227,9 +180,6 @@ class InvitationController extends Controller
                 $output_file = 'Not Valid';
             }
 
-            // crear ticket app    
-            $myTicket = ( new UserController)->createAppEventUserTicket($myAppUserId ,$myEvent->app_event_id ,$myEvent->app_schedule_id, $myQR,$myZonaName);                       
-
             array_push($myArrayAsistentes, $myGuest->id);
             array_push(
                 $myArrayMails,
@@ -237,7 +187,8 @@ class InvitationController extends Controller
                     'email' => $myGuest->email,
                     'send_email' => $asistente['send_email'],
                     'es_principal' => $asistente['asistente_principal'],
-                    'app_ticket_id' => $myTicket->ticket_id,
+                    'app_ticket_id' => 0,
+                    // 'app_ticket_id' => $myTicket->ticket_id,
                     'ticket_qrcode' => $myQR,
                     'qr_path' => $output_file 
                 ]
@@ -248,7 +199,7 @@ class InvitationController extends Controller
 
         $myInvitation->guests()->sync($myArrayData);
 
-        // enviar email!!
+        // enviar email!    
 
         if ($request->level == 0) {
         
@@ -270,14 +221,6 @@ class InvitationController extends Controller
                 $myEmail = $contenidoMail['email'];
                 $myHtml = $contenidoMail['content'];
                 $user = $contenidoMail['nombre'];
-
-                // check path 
-
-                // $myArrayMails,
-                // [
-                //     'email' => $myGuest->email,                 
-                //     'qr_path' => $output_file 
-                // ]
 
                 $baseQrPath = asset('storage');
 
@@ -1273,7 +1216,7 @@ class InvitationController extends Controller
 
         }
 
-        return Excel::download(new GuestsExport($sites), 'marenostrum-qr.csv');
+        return Excel::download(new GuestsExport($sites), 'vidafestival-qr.csv');
 
     }
 

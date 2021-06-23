@@ -1,5 +1,5 @@
 {
-    "titulo_layout_main": "Marenostrum Fuengirola",
+    "titulo_layout_main": "Vidafestival",
     "inicio_de_sesion_header": "Inicio de sesión",
     "inicio_de_sesion_label_email": "Su email",
     "inicio_de_sesion_label_password": "Su contraseña",
@@ -7,7 +7,7 @@
     "inicio_de_sesion_olvidada_contraseña": "¿No recuerda su contraseña?",
     "inicio_de_sesion_boton_iniciar_sesion": "Iniciar sesión",
     
-    "reset_password__titulo": "Marenostrum Fuengirola",
+    "reset_password__titulo": "Vidafestival",
     "reset_password__header": "Restablecer password",
     "reset_password__boton": "Link de reset de  password",    
     
