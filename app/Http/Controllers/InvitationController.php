@@ -142,7 +142,7 @@ class InvitationController extends Controller
                     ]);
 
             } else {
-                 Guest::where('email', $myGuest->dni)
+                 Guest::where('email', $asistente['email'])
                     ->update([
                         'nombre' => $asistente['nombre'],
                         'apellidos' => $asistente['apellidos'],
