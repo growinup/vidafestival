@@ -568,10 +568,11 @@ function asignarPeticionLogisticaParaEnvio() {
     });
 
     console.log ('datos peticion' , listadoAsistentesAutorizadorLogistica[0].pivot.guest_id)
+    console.log ('sin valor editor')
 
     var myUserTestGuestId = listadoAsistentesAutorizadorLogistica[0].pivot.guest_id
 
-         $('#myEmailPeticionHeader').text(peticionActual.user.email);
+        $('#myEmailPeticionHeader').text(peticionActual.user.email);
         $('#myNamePeticionHeader').text(peticionActual.user.name);
 
         var tempStr = templateEmailTest.replace('{{NOMBRE_EVENTO}}', peticionActual.datosPeticion.nombre_evento)
@@ -580,6 +581,7 @@ function asignarPeticionLogisticaParaEnvio() {
             .replace('{{NUMERO_ENTRADAS_PETICION}}', peticionActual.data.cantidad)
             .replace('{{NOMBRE_ZONA_PETICION}}', peticionActual.datosPeticion.zona)
             .replace('{{NOMBRE_PETICIONARIO}}', peticionActual.user.name)
+         
             // .replace('{{NOMBRE_INVITADO}}', listadoAsistentesAutorizadorLogistica[0]['nombre'] )
             
             .replace('{{HEADER_USER_APP}}', 'Datos de acceso')
