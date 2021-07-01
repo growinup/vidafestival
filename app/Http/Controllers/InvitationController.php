@@ -790,9 +790,16 @@ class InvitationController extends Controller
                 $myImageTag = '';
                 foreach ($data->guests as $guest) {
                     if ($guest['email'] == $contenidoMail['email'] ) {
-                        $myImageTag = "<img src=".$baseQrPath."/".$guest['qr_path'].">";
+                        $myImageTag = "<img src=".$baseQrPath."/".$guest->pivot->qr_path.">";
+                        // return  response(
+                        //     [
+                        //         'data' => $myImageTag,                                        
+                        //         'data2' => $guest,
+                        //     ]
+                        // );
                     }
                 }                
+                
 
 
                 $myHtml= str_replace("{{QR_CODE}}", $myImageTag , $contenidoMail['content']);
