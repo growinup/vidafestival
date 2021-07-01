@@ -1281,7 +1281,7 @@ class InvitationController extends Controller
                 $invitation->guests()->updateExistingPivot($guest, ['qr_path' => $output_file]);
 
                 sleep(1);
-
+                
                 $myLoop++;
                  
             }
