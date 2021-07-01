@@ -169,6 +169,7 @@ class InvitationController extends Controller
             }
 
             try {
+                
                 // generar fichero QR 
                 $image = QrCode::format('png')                 
                 ->size(200)->errorCorrection('H')
@@ -176,6 +177,8 @@ class InvitationController extends Controller
                 $output_file = 'qrcodes/qr-' . time() . '.png';
                 // Guardar QR en storage
                 Storage::disk('local')->put('public'.'/' . $output_file, $image); //storage/app/public/img/qr-code/img-1557309130.png                           
+                sleep(1);
+
             } catch (\Throwable $th) {
                 $output_file = 'Not Valid';
             }
