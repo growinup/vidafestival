@@ -1247,13 +1247,13 @@ class InvitationController extends Controller
 
         $myInvitations = Invitation::select('invitations.event_id', 'invitations.id','zones.nombre as zoneName','zones.id as zoneId')
                 ->leftjoin('zones', 'zones.id', '=', 'invitations.zona_id','invitations.zona_id' )                
-                ->where('invitations.event_id',15)
+                ->where('invitations.event_id',13)
                 ->get();
                             
        
         $myLoop = 1;
 
-        echo "iniciando proceso event Id 15";
+        echo "iniciando proceso event Id 13";
         
         foreach ($myInvitations as $invitation) {
             //  dd($test->guests[0]);
