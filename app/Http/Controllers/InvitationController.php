@@ -1201,7 +1201,7 @@ class InvitationController extends Controller
         //  dd($myTestInvitation[0]->zoneName);
        
         
-        $sites->add( ["Nombre del evento ","Id evento","Zona/Sector","nombre y apellidos","dni","email", "barcode","tipo de entrada","valido"]);
+        $sites->add( ["Nombre del evento ","Id evento","Id Invitación", "Zona/Sector","nombre y apellidos","dni","email", "barcode","tipo de entrada","valido"]);
        
         foreach ($myInvitations as $invitation) {
             //  dd($test->guests[0]);
@@ -1224,6 +1224,7 @@ class InvitationController extends Controller
                     [
                         $myEvent->nombre,
                         $myEvent->id,
+                        $invitation->id,
                         $invitation->zoneName,
                         $guest->nombre . " " . $guest->apellidos,
                         $guest->pivot->dni,
@@ -1246,12 +1247,13 @@ class InvitationController extends Controller
 
         $myInvitations = Invitation::select('invitations.event_id', 'invitations.id','zones.nombre as zoneName','zones.id as zoneId')
                 ->leftjoin('zones', 'zones.id', '=', 'invitations.zona_id','invitations.zona_id' )                
+                ->where('invitations.event_id',15)
                 ->get();
                             
        
         $myLoop = 1;
 
-        echo "iniciando proceso";
+        echo "iniciando proceso event Id 15";
         
         foreach ($myInvitations as $invitation) {
             //  dd($test->guests[0]);
@@ -1287,6 +1289,8 @@ class InvitationController extends Controller
         }
 
         echo "proceso finalizado";
+        echo $myLoop;
+
         return "hecho";
         
 
