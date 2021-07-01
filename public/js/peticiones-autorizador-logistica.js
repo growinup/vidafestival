@@ -571,25 +571,7 @@ function asignarPeticionLogisticaParaEnvio() {
 
     var myUserTestGuestId = listadoAsistentesAutorizadorLogistica[0].pivot.guest_id
 
-    if (esAsistentePrincipalHeader) {
-        $('#myEmailPeticionHeader').text(emailPrincipalHeader);
-        $('#myNamePeticionHeader').text(nombrePrincipalHeader);
-
-        var tempStr = templateEmailTest.replace('{{NOMBRE_EVENTO}}', peticionActual.datosPeticion.nombre_evento)
-            .replace('{{FECHA_EVENTO}}', myEventDate)
-            .replace('{{HORA_EVENTO}}', peticionActual.datosPeticion.hora_evento)
-            .replace('{{NUMERO_ENTRADAS_PETICION}}', peticionActual.data.cantidad)
-            .replace('{{NOMBRE_ZONA_PETICION}}', peticionActual.datosPeticion.zona)
-            .replace('{{NOMBRE_PETICIONARIO}}', nombrePrincipalHeader)
-            .replace('{{NOMBRE_INVITADO}}', listadoAsistentesAutorizadorLogistica[0]['nombre'] )
-
-            .replace('{{HEADER_USER_APP}}', 'Datos de acceso')
-            .replace('{{LOGIN_USER_APP}}', listadoAsistentesAutorizadorLogistica[0]['email'])
-            .replace('{{PASSWORD_USER_APP}}', 123456);
-
-
-    } else {
-        $('#myEmailPeticionHeader').text(peticionActual.user.email);
+         $('#myEmailPeticionHeader').text(peticionActual.user.email);
         $('#myNamePeticionHeader').text(peticionActual.user.name);
 
         var tempStr = templateEmailTest.replace('{{NOMBRE_EVENTO}}', peticionActual.datosPeticion.nombre_evento)
@@ -598,14 +580,11 @@ function asignarPeticionLogisticaParaEnvio() {
             .replace('{{NUMERO_ENTRADAS_PETICION}}', peticionActual.data.cantidad)
             .replace('{{NOMBRE_ZONA_PETICION}}', peticionActual.datosPeticion.zona)
             .replace('{{NOMBRE_PETICIONARIO}}', peticionActual.user.name)
-            .replace('{{NOMBRE_INVITADO}}', listadoAsistentesAutorizadorLogistica[0]['nombre'] )
+            // .replace('{{NOMBRE_INVITADO}}', listadoAsistentesAutorizadorLogistica[0]['nombre'] )
             
             .replace('{{HEADER_USER_APP}}', 'Datos de acceso')
             .replace('{{LOGIN_USER_APP}}', listadoAsistentesAutorizadorLogistica[0]['email'])
             .replace('{{PASSWORD_USER_APP}}', 123456);
-
-    }
-
 
 
     templateEmailTest = tempStr;
@@ -638,6 +617,7 @@ function asignarPeticionLogisticaParaEnvio() {
 }
 
 function enviarEmailPeticionLogistica() {
+    console.log (listadoAsistentesAutorizadorLogistica)
 
     peticionActual.details[0].boca = $('#myBocaLogistica').val();
     peticionActual.details[0].fila = $('#myFilaLogistica').val();
@@ -650,7 +630,38 @@ function enviarEmailPeticionLogistica() {
 
     // enviando peticion
 
-    console.log ('listado asistentes', listadoAsistentes)
+    console.log ('listado asistentes', listadoAsistentesAutorizadorLogistica)
+
+    var myTemplatesToSendCollection = []
+    var myGuestSendDetails = {}
+    var myTemplateToSend = '' 
+
+    for (let i = 0; i < listadoAsistentesAutorizadorLogistica.length; i++) {
+
+        myTemplateToSend = contenido.replace('{{NOMBRE_INVITADO}}', listadoAsistentesAutorizadorLogistica[i]['nombre'])
+            .replace('{{HEADER_USER_APP}}',"Tus datos de acceso")                    
+            .replace('{{LOGIN_USER_APP}}', listadoAsistentesAutorizadorLogistica[i]['email'])
+            .replace('{{PASSWORD_USER_APP}}',"123456")
+            .replace('{{FECHA_EVENTO}}', peticionActual.fecha_evento)
+            .replace('{{NOMBRE_EVENTO}}', peticionActual.nombre_evento)
+            .replace('{{HORA_EVENTO}}', peticionActual.hora_evento)
+            .replace('{{NUMERO_ENTRADAS_PETICION}}', 1)
+            .replace('{{NOMBRE_ZONA_PETICION}}', peticionActual.zona)
+            .replace('{{NOMBRE_PETICIONARIO}}','')                   
+            .replace('{{NOMBRE_ZONA_PETICION}}', peticionActual.zona) 
+
+            myGuestSendDetails = {}
+            
+            myGuestSendDetails.nombre = listadoAsistentesAutorizadorLogistica[i]['nombre']
+            myGuestSendDetails.email = listadoAsistentesAutorizadorLogistica[i]['email']
+
+            myGuestSendDetails.content = myTemplateToSend
+            myGuestSendDetails.app_user_id = listadoAsistentesAutorizadorLogistica[i]['app_user_id'] ?? ''
+
+            myTemplatesToSendCollection.push(myGuestSendDetails)
+        }
+        console.log (myTemplatesToSendCollection)
+
 
     Swal.fire({
         title: MENSAJES_AUTORIZADOR_LOGISTICA__DIALOGO_ENVIAR_PETICION.enviar_peticion__titulo,
@@ -664,7 +675,9 @@ function enviarEmailPeticionLogistica() {
     }).then((result) => {
 
         if (result.value) {
-
+            
+            startPreloader()
+            
             axios.put('/enviarpeticionlogistica', {
                 IDPeticion: peticionActual.data.id,
                 boca: peticionActual.details[0].boca,
@@ -679,13 +692,41 @@ function enviarEmailPeticionLogistica() {
                 userName: peticionActual.user.name,
                 email: peticionActual.user.email,
                 emailsecundario: peticionActual.emailpeticion,
-                guestId : listadoAsistentesAutorizadorLogistica[0].pivot.guest_id
+                guestId : listadoAsistentesAutorizadorLogistica[0].pivot.guest_id,
+
+                tipo_cupo: tipoCupo,
+                department_id: userDepartmentID,
+
+                level: 0,
+
+                dateEvent: dateEvent,
+                datePeticio: datePeticio,
+                eventName: eventName,
+                quantitatInvitacions: quantitatInvitacions,
+                zonaPeticio: myZona2,
+                zona_id: zona_id,
+                enNomDe: enNomDe,
+                user_id: userID,
+                user_name: userName,
+                user_dep: userDepartmentName,
+
+                tipo_invitacion_id: myTipoInvitacionID,
+                tipo_invitacion: myTipus2,
+
+                event_id: eventID,
+                email_secundario_peticion: email_secundario_peticion,
+                idioma_peticion: idiomaPeticion,
+                nuevo_cupo: myPending,
+                listadoAsistentes: listadoAsistentesAutorizadorLogistica,
+                contenidoEnvio: myTemplatesToSendCollection
+
             })
                 .then(response => {
+                    
+                    stopPreloader()
 
                     if (response.data.success) {
-
-                        console.log ('ticket' , response.data)
+                        
                         myConfirmMessage = MENSAJES_AUTORIZADOR_LOGISTICA__DIALOGO_ENVIAR_PETICION.todo_ok_peticion + peticionActual.data.codigo + MENSAJES_AUTORIZADOR_LOGISTICA__DIALOGO_ENVIAR_PETICION.todo_ok_peticion__texto;
                         Swal.fire(
                             MENSAJES_AUTORIZADOR_LOGISTICA__DIALOGO_ENVIAR_PETICION.todo_ok,
@@ -708,9 +749,12 @@ function enviarEmailPeticionLogistica() {
                 })
                 .catch(function (error) {
                     console.log(error)
+                    stopPreloader()
                 });
         }
     })
+
+    stopPreloader()
 }
 
 

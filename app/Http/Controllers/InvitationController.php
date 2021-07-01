@@ -738,6 +738,10 @@ class InvitationController extends Controller
     public function enviarpeticionlogistica(Request $request)
     {
 
+        $myArrayAsistentes = [];
+        $myArrayMails = [];
+        $myArrayData = [];
+
         $myAppUserId = 0;
         
         $myUserToCheck = Guest::find($request->guestId);
@@ -757,44 +761,52 @@ class InvitationController extends Controller
 
         $myEvent = Event::find($data->event_id);
         
-        // $myAppUserId = $contenidoMail['app_user_id'];
 
-        // enviar mail
+        $myUserAppId = 0;
+
+        // enviar email!    
+
+        if ($request->level == 0) {
         
-        $myEmail = $request->email;
-        $mySubject =  $request->asunto;
-        $myHtml = $request->body;
-        $user = $request->userName;
-        $emailSecundario = $request->emailsecundario;
+            // enviar mail a cada asistente
+           
+            $myEmail = '';
+            $mySubject =  '';
+            $myHtml = '';
+            $user = '';
 
-        Mail::send([], [], function($message) use ($myEmail, $mySubject, $myHtml, $user, $emailSecundario)
-        {                  
-            if ($emailSecundario != '' ) {
-                $message->to($myEmail)   
-                        ->cc( $emailSecundario )
-                        ->subject($mySubject)
-                        ->setBody( $myHtml ,'text/html');
-            } else {
-                $message->to($myEmail)   
-                ->subject($mySubject)
-                ->setBody( $myHtml ,'text/html');
+            foreach ($request->contenidoEnvio as $contenidoMail) {
+            
+                // enviar mail
+                        
+                $mySubject =  $request->asunto;
+                $emailSecundario = $request->emailsecundario;
+                $myEmail = $contenidoMail['email'];
+                $myHtml = $contenidoMail['content'];
+                $user = $contenidoMail['nombre'];
+
+                $baseQrPath = asset('storage');
+
+                $myImageTag = '';
+                foreach ($data->guests as $guest) {
+                    if ($guest['email'] == $contenidoMail['email'] ) {
+                        $myImageTag = "<img src=".$baseQrPath."/".$guest['qr_path'].">";
+                    }
+                }                
+
+
+                $myHtml= str_replace("{{QR_CODE}}", $myImageTag , $contenidoMail['content']);
+
+                Mail::send([], [], function($message) use ($myEmail, $mySubject, $myHtml, $user, $emailSecundario)
+                {                  
+                    $message->to($myEmail)   
+                    ->subject($mySubject)
+                    ->setBody( $myHtml ,'text/html');    
+                });
+          
             }
 
-        });
-
-
-        // crear ticket app
-
-        $myTicket = ( new UserController)->createAppEventUserTicket($myAppUserId ,$myEvent->app_event_id);        
-         
-
-        return response ([
-            'success' => true,
-            'details' => $myDetails,
-            "ticket" =>  $myTicket,
-            "app_user_id" => $myAppUserId,
-            "app_event_id" => $myEvent
-           ]);
+        }
 
 
         return  response(
