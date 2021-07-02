@@ -15,10 +15,10 @@ class EventController extends Controller
     public function index()
     {
         
-        $data = Event::whereDate('fecha', '>=', now())
-            ->get();
+        // $data = Event::whereDate('fecha', '>=', now())
+        //     ->get();
 
-        // $data = Event::all();
+         $data = Event::all();
 
         return response(['data' => $data]);
     }
